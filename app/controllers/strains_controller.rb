@@ -9,18 +9,18 @@ class StrainsController < ApplicationController
     end 
   
     #new 
-    get "/posts/new" do 
+    get "/strains/new" do 
       if logged_in
-      erb :"posts/new"
+      erb :"strains/new"
       elseredirect to "/sign_up"
     end
   
     #create 
-    post "/posts" do 
+    post "/strains" do 
       ## validate the params 
   
       ## for your projects feel free to use model vals if you know what they are. 
-      if !logged_in? && params[:title] == "" || params[:subject] == "" || params[:content] == ""
+      if !logged_in? && params[:name] == "" || params[:type] == "" || params[:form] == "" || params[:thc] == "" || params[:cbd] == "" || params[:review] == ""
         redirect to "/posts/new"
       else 
         @post = Post.new(params[:posts])

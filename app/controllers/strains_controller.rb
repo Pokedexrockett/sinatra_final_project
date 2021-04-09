@@ -21,39 +21,39 @@ class StrainsController < ApplicationController
   
       ## for your projects feel free to use model vals if you know what they are. 
       if !logged_in? && params[:name] == "" || params[:type] == "" || params[:form] == "" || params[:thc] == "" || params[:cbd] == "" || params[:review] == ""
-        redirect to "/posts/new"
+        redirect to "/strain/new"
       else 
-        @post = Post.new(params[:posts])
+        @strain = strain.new(params[:strains])
         ## verify no SQL injection
-        if @post.save
-          redirect to "/posts/#{@post.id}"
+        if @strain.save
+          redirect to "/strains/#{@strain.id}"
         else 
-          redirect to "/posts/new"
+          redirect to "/strains/new"
         end
       end 
     end 
   
     #show 
-    get "/posts/:id" do 
-      @post = Post.find_by_id(params[:id])
+    get "/strains/:id" do 
+      @post = Strain.find_by_id(params[:id])
       if logged_in?
-      if @post 
-        erb :"/posts/show"
+      if @strain 
+        erb :"/strains/show"
       else 
-        redirect to "/posts"
+        redirect to "/strains"
       end
       end 
     end 
   
     #edit 
-    get "/posts/:id/edit" do 
+    get "/strains/:id/edit" do 
       if logged_in?
-        @post = Post.find_by_id(params[:id])
-        if logged_in? && @post.user == current_user
-        if @post  && @post.user == current_user
-          erb :"/posts/edit"
+        @strain = Strain.find_by_id(params[:id])
+        if logged_in? && @strain.patient == current_patient
+        if @strain  && @strain.patient == current_patient
+          erb :"/strains/edit"
         else 
-          rediect to "/posts"
+          rediect to "/strains"
         end
       else 
         rediect to "/sign_up"
@@ -61,26 +61,26 @@ class StrainsController < ApplicationController
     end 
   
     #update 
-    patch "/posts/:id" do 
-      if !logged_in? && params[:title] == "" || params[:subject] == "" || params[:content] == ""
-        redirect to "/posts/#{params[:id]}/edit"
+    patch "/strains/:id" do 
+      if !logged_in? && params[:name] == "" || params[:type] == "" || params[:form] == "" || params[:thc] == "" || params[:cbd] == "" || params[:review] == ""
+        redirect to "/strains/#{params[:id]}/edit"
       else 
-        @post = Post.find_by_id(params[:id])
-        if @post && @post.update(params[:posts])
-          redirect to "/posts/#{@post.id}"
+        @post = Strain.find_by_id(params[:id])
+        if @strain && @strain.update(params[:strains])
+          redirect to "/strains/#{@strain.id}"
         else 
-          redirect to "/posts/#{params[:id]}/edit"
+          redirect to "/strains/#{params[:id]}/edit"
         end
       end 
     end 
   
     #delete
-    #delete "/posts/:id"
-    delete "/posts/:id/delete" do 
-      @post = Post.find_by_id(params[:id])
-      if @post 
-        @post.delete
+    #delete "/strains/:id"
+    delete "/strains/:id/delete" do 
+      @strain = Strain.find_by_id(params[:id])
+      if @strain 
+        @strain.delete
       end
-      redirect to "/posts"
+      redirect to "/strains"
     end 
   end 

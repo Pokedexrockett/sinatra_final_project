@@ -1,10 +1,10 @@
 ActiveRecord::Schema.define(version: 2021_03_16_222716) do
     create_table "strains", force: :cascade do |t|
         t.string "name"
-        t.string "type"
+        t.string "ISH"
         t.string "form"
-        t.integer "thc"
-        t.integer "cbd"
+        t.numeric "thc"
+        t.numeric "cbd"
         t.string "review"
         t.belongs_to "patient"
         t.datetime "created_at"

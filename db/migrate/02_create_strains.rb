@@ -2,10 +2,10 @@ class CreateStrains < ActiveRecord::Migration[5.2]
     def change
         create_table :strains do |t|
             t.string :name
-            t.string :type
+            t.string :ISH
             t.string :form
-            t.integer :thc
-            t.integer :cbd
+            t.numeric :thc
+            t.numeric :cbd
             t.string :review
             t.belongs_to :patient
             t.datetime :created_at

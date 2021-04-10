@@ -1,8 +1,8 @@
 class PatientsController < ApplicationController
 
-    # get "/sign_up" do 
-    #   erb :"/patients/new"
-    # end 
+    get "/sign_up" do 
+      erb :"/patients/new"
+    end 
   
     # post "/sign_up" do 
     #   if params[:patient][:password] == params[:patient][:password_confirmation] && params[:patient][:email] && params[:patient][:username]

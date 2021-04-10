@@ -15,14 +15,22 @@ class ApplicationController < Sinatra::Base
     erb :welcome
   end
 
-  helpers do 
-    def current_patient 
-      @current_patient ||= Patient.find_by(id: session[:patient_id]) if session[:patient_id]
-    end 
-
-    def logged_in? 
-      !!current_patient
-    end 
+  get "/patients" do
+    erb :patients
   end
+
+  get "/strains" do
+    erb :strains
+  end
+
+  # helpers do 
+  #   def current_patient 
+  #     @current_patient ||= Patient.find_by(id: session[:patient_id]) if session[:patient_id]
+  #   end 
+
+  #   def logged_in? 
+  #     !!current_patient
+  #   end 
+  # end
 
 end

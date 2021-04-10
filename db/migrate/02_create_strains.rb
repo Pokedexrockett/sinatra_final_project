@@ -7,6 +7,7 @@ class CreateStrains < ActiveRecord::Migration[5.2]
             t.integer :thc
             t.integer :cbd
             t.string :review
+            t.belongs_to :patient
             t.datetime :created_at
             t.datetime :updated_at
         end

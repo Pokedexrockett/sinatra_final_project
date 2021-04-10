@@ -84,3 +84,4 @@ class StrainsController < ApplicationController
       redirect to "/strains"
     end 
   end 
+end

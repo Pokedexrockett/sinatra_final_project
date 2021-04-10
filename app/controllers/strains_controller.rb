@@ -2,6 +2,7 @@ class StrainsController < ApplicationController
 
     #index
     get "/strains" do
+        @strains = Strain.all
         erb :"strains/index"
     end
 

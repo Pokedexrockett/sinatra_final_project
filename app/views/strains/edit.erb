@@ -1,1 +1,14 @@
-<h1>Strain Edit Page</h1>
+<h1>Edit Strain Page</h1>
+
+<form action="/strains/<%= @strain.id%>" method="POST">
+  <input type="hidden" name="_method" value="PATCH">
+  <p>name: <input type="text" name="strains[name]" value="<%= @strain.name%>" /></p>
+  <p>ISH: <input type="text" name="strains[ish]" value="<%= @strain.ish %>"/></p>
+  <p>form: <input type="text" name="strains[form]" value="<%= @strain.form%>"/></p>
+  <p>thc: <input type="numeric" name="strains[thc]" value="<%= @strain.thc%>"/></p>
+  <p>cbd: <input type="numeric" name="strains[cbd]" value="<%= @strain.cbd%>"/></p>
+  <p>review: <input type="text" name="strains[review]" value="<%= @strain.review%>"/></p>
+
+  <input type="submit" value="Edit Strain">
+</form>
+

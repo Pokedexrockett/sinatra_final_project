@@ -15,13 +15,7 @@ class ApplicationController < Sinatra::Base
     erb :welcome
   end
 
-  get "/patients" do
-    erb :patients
-  end
 
-  get "/strains" do
-    erb :strains
-  end
 
   # helpers do 
   #   def current_patient 

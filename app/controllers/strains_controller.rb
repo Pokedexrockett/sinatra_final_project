@@ -12,7 +12,7 @@ class StrainsController < ApplicationController
 
     #create
     post "/strains" do
-
+        
     end
 
     #show

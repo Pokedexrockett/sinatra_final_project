@@ -21,8 +21,8 @@ class StrainsController < ApplicationController
     end
 
     #edit
-    get "/strains/:id/" do
-        erb :"/strains/edit"
+    get "/strains/:id/edit" do
+        erb :"strains/edit"
     end
 
     #update

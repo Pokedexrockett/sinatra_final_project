@@ -18,4 +18,4 @@ class PatientsController < ApplicationController
       redirect to "/sign_up"
     end 
   end  
- end
+end

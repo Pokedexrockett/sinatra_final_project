@@ -5,8 +5,7 @@ class PatientsController < ApplicationController
   end 
   
   post "/sign_up" do 
-    if params[:patient][:password] == params[:patient][:password_confirmation] 
-    params[:patient][:email] && params[:patient][:username]
+    if params[:patient][:password] == params[:patient][:password_confirmation] && params[:patient][:email] && params[:patient][:username]
       @patient = Patient.new(params[:patient])
       if @patient.save 
         session[:patient_id] = @patient.id

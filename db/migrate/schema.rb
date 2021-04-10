@@ -1,7 +1,7 @@
 ActiveRecord::Schema.define(version: 2021_03_16_222716) do
     create_table "strains", force: :cascade do |t|
         t.string "name"
-        t.string "ISH"
+        t.string "ish"
         t.string "form"
         t.numeric "thc"
         t.numeric "cbd"

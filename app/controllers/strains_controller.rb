@@ -2,6 +2,7 @@ class StrainsController < ApplicationController
 
     #index
     get "/strains" do
+        if current_patient
         @strains = Strain.all
         erb :"strains/index"
     end

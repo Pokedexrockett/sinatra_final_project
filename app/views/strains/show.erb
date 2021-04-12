@@ -2,11 +2,7 @@
 
 <div>
   <h2><%= @strain.name %></h2>
-  <ul>
-    <li>
-      ISH: <%= @strain.ish %>
-    </li>
-  </ul>
+ 
   <div>
     Form: <%= @strain.form %>
   </div>
@@ -27,10 +23,3 @@
       <input type="hidden" name="_method" value="DELETE">
       <input type="submit" value="Delete this strain!">
     </form>
-
-    <h4><%= strain.name%></h4>
-    <p>ISH: <%= strain.ish%></p>
-    <p>form: <%= strain.form%></p>
-    <p>thc: <%= strain.thc%></p>
-    <p>cbd: <%= strain.cbd%></p>
-    <p>review: <%= strain.review%></p>
